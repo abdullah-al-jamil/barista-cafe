@@ -218,8 +218,8 @@ function startSlider() {
   }
 }
 
-onMounted(() => {
-  loadData()
+onMounted(async () => {
+  await loadData()
   startSlider()
 })
 
