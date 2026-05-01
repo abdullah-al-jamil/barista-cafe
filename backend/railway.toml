@@ -1,0 +1,9 @@
+# Place this in the VERY ROOT of your repo
+[build]
+builder = "RAILPACK"
+# Point to your backend folder explicitly
+configPath = "backend/railway.toml" 
+
+[build.config]
+RAILPACK_PHP_VERSION = "8.4"
+COMPOSER_ALLOW_SUPERUSER = "1"
