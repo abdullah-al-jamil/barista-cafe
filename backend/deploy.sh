@@ -5,6 +5,9 @@ set -e
 echo "Running Laravel migrations..."
 php artisan migrate --force
 
+echo "Running database seeders..."
+php artisan db:seed --force
+
 echo "Caching config..."
 php artisan config:cache
 
@@ -17,4 +20,5 @@ php artisan view:cache
 echo "Caching events..."
 php artisan event:cache
 
-echo "Deployment complete."
+echo "Starting supervisord..."
+exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
