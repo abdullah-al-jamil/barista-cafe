@@ -11,7 +11,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 FROM php:8.4-fpm-alpine
 
-RUN apk add --no-cache nginx supervisor
+RUN apk add --no-cache nginx supervisor libpq-dev
 
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pdo_sqlite
 
