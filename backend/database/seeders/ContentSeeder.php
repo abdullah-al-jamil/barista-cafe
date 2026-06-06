@@ -97,7 +97,7 @@ class ContentSeeder extends Seeder
 
             foreach ($items as $itemIndex => $item) {
                 MenuItem::updateOrCreate(
-                    ['slug' => $item['name']],
+                    ['slug' => strtolower(str_replace(' ', '-', $item['name']))],
                     array_merge($item, [
                         'category_id' => $category->id,
                         'slug' => strtolower(str_replace(' ', '-', $item['name'])),
